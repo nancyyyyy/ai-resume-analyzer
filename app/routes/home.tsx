@@ -12,7 +12,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+  return <main className="w-full min-h-screen bg-[url('/images/bg-main.svg')] bg-cover">
     <Navbar/>
     <section className="main-section">
       <div className="page-heading">
@@ -21,7 +21,6 @@ export default function Home() {
 
       </div>
 
-    </section>
     {resumes.length>0 && (
       <div className="resume-section">
           {resumes.map((resume)=>(
@@ -30,6 +29,6 @@ export default function Home() {
       </div>
     )}
 
-
-  </main>;
+    </section>
+  </main>
 }
