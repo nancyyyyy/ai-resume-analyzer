@@ -1,33 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @theme {
-  --font-sans: "Mona Sans", ui-sans-serif, system-ui, sans-serif,
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --color-dark-200: #475467;
-  --color-light-blue-100: #c1d3f81a;
-  --color-light-blue-200: #a7bff14d;
+  --color-dark-200: #94a3b8;
+  --color-light-blue-100: #1e293b;
+  --color-light-blue-200: #334155;
 
-  --color-badge-green: #d5faf1;
-  --color-badge-red: #f9e3e2;
-  --color-badge-yellow: #fceed8;
+  --color-badge-green: #064e3b;
+  --color-badge-red: #7f1d1d;
+  --color-badge-yellow: #92400e;
 
-  --color-badge-green-text: #254d4a;
-  --color-badge-red-text: #752522;
-  --color-badge-yellow-text: #73321b;
+  --color-badge-green-text: #6ee7b7;
+  --color-badge-red-text: #fca5a5;
+  --color-badge-yellow-text: #fcd34d;
 }
 
 html,
 body {
-  @apply bg-white;
+  @apply bg-slate-900 text-gray-100;
 }
 
 main {
   @apply min-h-screen pt-10;
 }
 h1 {
-  @apply text-6xl  text-gradient leading-tight tracking-[-2px] font-semibold;
+  @apply text-6xl text-gradient leading-tight tracking-[-2px] font-semibold;
 }
 
 h2 {
@@ -38,11 +38,11 @@ label {
   @apply text-dark-200;
 }
 input {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+  @apply w-full p-4 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-800 text-white;
 }
 
 textarea {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+  @apply w-full p-4 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-800 text-white;
 }
 
 form {
@@ -51,28 +51,28 @@ form {
 
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#60a5fa] via-[#3b82f6] to-[#8b5cf6];
   }
   .gradient-border {
-    @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
+    @apply bg-gradient-to-b from-slate-800 to-slate-700 p-4 rounded-lg;
   }
   .primary-button {
-    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
+    @apply primary-gradient text-white rounded-lg px-4 py-2 cursor-pointer w-full hover:opacity-90 transition-opacity;
   }
   .resume-nav {
-    @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
+    @apply flex flex-row justify-between items-center p-4 border-b border-slate-700;
   }
   .resume-summary {
     @apply flex flex-row items-center justify-center p-4 gap-4;
     .category {
-      @apply flex flex-row gap-2 items-center bg-gray-50 rounded-2xl p-4 w-full justify-between;
+      @apply flex flex-row gap-2 items-center bg-slate-800 rounded-lg p-4 w-full justify-between;
     }
   }
   .back-button {
-    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
+    @apply flex flex-row items-center gap-2 border border-slate-600 rounded-lg p-2 hover:bg-slate-700 transition-colors;
   }
   .auth-button {
-    @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
+    @apply primary-gradient rounded-lg py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white hover:opacity-90 transition-opacity;
   }
   .main-section {
     @apply flex flex-col items-center gap-8 pt-12 mx-15 pb-5;
@@ -85,7 +85,7 @@ form {
   }
 
   .resume-card {
-    @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-white rounded-2xl p-4;
+    @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-slate-800 rounded-lg p-4 border border-slate-700;
   }
 
   .resume-card-header {
@@ -97,11 +97,11 @@ form {
   }
 
   .navbar {
-    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+    @apply flex flex-row justify-between items-center bg-slate-800 rounded-lg p-4 w-full px-10 max-w-[1200px] mx-auto border border-slate-700;
   }
 
   .score-badge {
-    @apply flex flex-row items-center justify-center py-1 px-2 gap-4 rounded-[96px];
+    @apply flex flex-row items-center justify-center py-1 px-2 gap-4 rounded-full;
   }
 
   .form-div {
@@ -109,36 +109,36 @@ form {
   }
 
   .uplader-drag-area {
-    @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-white rounded-2xl min-h-[208px];
+    @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-slate-800 rounded-lg min-h-[208px] border-2 border-dashed border-slate-600 hover:border-blue-500;
   }
   .uploader-selected-file {
-    @apply flex items-center justify-between p-3 bg-gray-50 rounded-2xl;
+    @apply flex items-center justify-between p-3 bg-slate-700 rounded-lg;
   }
 }
 
 @utility bg-gradient {
-  background: linear-gradient(to bottom, #f0f4ff 60%, #fa7185cc);
+  background: linear-gradient(to bottom, #0f172a 60%, #1e293b);
 }
 
 @utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#60a5fa] via-[#3b82f6] to-[#8b5cf6];
 }
 
 @utility gradient-hover {
-  @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200;
+  @apply bg-gradient-to-b from-slate-700 to-slate-600;
 }
 
 @utility primary-gradient {
-  background: linear-gradient(to bottom, #8e98ff, #606beb);
-  box-shadow: 0px 74px 21px 0px #6678ef00;
+  background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+  box-shadow: 0px 4px 6px -1px rgba(59, 130, 246, 0.1);
 }
 
 @utility primary-gradient-hover {
-  background: linear-gradient(to bottom, #717dff, #4957eb);
+  background: linear-gradient(to bottom, #2563eb, #1e40af);
 }
 
 @utility inset-shadow {
-  box-shadow: inset 0 0 12px 0 rgba(36, 99, 235, 0.2);
+  box-shadow: inset 0 0 12px 0 rgba(59, 130, 246, 0.2);
   backdrop-filter: blur(10px);
 }
 
